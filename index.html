@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RANS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="terminal" id="terminal">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="title">NEON-LOCK · SYS</div>
+      </div>
+
+      <div class="warning flicker">!!! ALERT: UNAUTHORIZED ACTIVITY DETECTED !!!</div>
+
+      <pre id="log" aria-live="polite"></pre>
+
+      <div class="progress-wrap" aria-hidden="true">
+        <div id="progress" class="progress"></div>
+      </div>
+
+      <div class="status-row">
+        <div id="status">initiating scan...</div>
+        <div id="percent">0%</div>
+      </div>
+
+      <div id="locked" class="locked" aria-hidden="true">
+        <div>
+          <div class="big">SYSTEM LOCKED</div>
+          <div class="sub">(semua file anda sudah di hapus)</div>
+          <button id="unlockBtn" class="btn-unlock" aria-haspopup="dialog">UNLOCK</button>
+        </div>
+
+        <div class="controls">
+          <button id="playAlarmBtn" class="fs-btn">Play Alarm</button>
+          <button id="enterFsBtn" class="fs-btn">Enter Fullscreen</button>
+        </div>
+
+        <div class="muted">PIN default: <strong id="pinHint">123</strong> (simulasi)</div>
+      </div>
+
+      <div id="neonFlash" class="flash" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <!-- PIN modal -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="dialog" id="dialog">
+      <h3 style="margin:0 0 8px;color:var(--neon)">Masukkan PIN untuk unlock</h3>
+      <input id="pinInput" class="pin" inputmode="numeric" maxlength="6" placeholder="— — —" />
+      <div class="row">
+        <button id="okBtn" class="btn btn-ok">OK</button>
+        <button id="cancelBtn" class="btn btn-cancel">Batal</button>
+      </div>
+      <div id="err" class="danger" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
